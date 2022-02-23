@@ -46,7 +46,7 @@ public class TopicosController {
 	private CursoRepository cursoRepository;
 	
 	@GetMapping
-	@Cacheable (value = "listaDeTopicos")
+	@Cacheable (value = "listaDeTopicos") //Verificar boas praticas na utilização de memória cache
 	public Page <TopicoDto> lista (@RequestParam (required = false) String nomeCurso, @PageableDefault(sort= "id", direction=Direction.DESC) Pageable paginacao) {
 		
 		
